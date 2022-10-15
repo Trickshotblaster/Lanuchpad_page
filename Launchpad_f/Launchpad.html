@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html>
+    <link rel="stylesheet" href="Style.css">
+    <title>
+        Launchpad
+    </title>
+    <header>
+        <div class="topbar">
+            <img class="hamburger" src="icons8-menu.svg" onclick="openMenu()">
+        </div>
+        <div id="menuimg" class="menu">
+            <a class="menulink" href="https://lwhs.lwsd.org/">LWHS</a><br><br>
+            <a class="menulink" href="https://www.bigideasmath.com/BIM/login">BIM</a><br><br>
+        </div>
+        <h1 id="date-time">
+            Placeholder
+        </h1>
+        <h3>Good <span id="time"></span></h3>
+    </header>
+    <script>
+        var open = 0;
+        var menu = document.getElementById("menuimg");
+        function openMenu() {
+            
+            if (open == 0){
+                
+                console.log("open")
+                menu.style.right = "0";
+                open = 1
+                
+            }
+            else {
+                console.log("closed")
+                menu.style.right = "-12.5rem";
+                open = 0
+            }
+        }
+
+        
+
+        var dt = new Date().toDateString();
+        document.getElementById('date-time').innerHTML=dt;
+
+        var today = new Date()
+        var curHr = today.getHours()
+        var time = null;
+
+        if (curHr < 12) {
+        var time = "Morning";
+        } else if (curHr < 18) {
+        var time = "Afternoon";
+        } else {
+        var time = "Evening";
+        }
+
+        document.getElementById("time").innerHTML = time;
+    </script>
+    <body>
+        
+        <br>
+        <h2 class="linktext">
+            Links
+        </h2>
+        <div id="links">
+            <a href="https://www.google.com/">Google</a><br><br>
+            <a href="https://launchpad.classlink.com/lwsd">ClassLink</a><br><br>
+            <a href="https://www.lwsd.org/">LWSD</a><br><br>
+            <a href="https://quizlet.com/latest">Quizlet</a><br><br>
+            <a href="https://www.khanacademy.org/profile/me/teachers?joinedClassCode=3H6795AE">Khan Academy</a><br><br>
+            <a href="https://monkeytype.com/">Monkeytype</a><br><br>
+        </div>
+    </body>
+</html>
